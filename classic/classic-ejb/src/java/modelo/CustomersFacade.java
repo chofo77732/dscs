@@ -24,6 +24,8 @@ public class CustomersFacade extends AbstractFacade<Customers> implements Custom
         return em;
     }
 
+    
+    
     public CustomersFacade() {
         super(Customers.class);
     }

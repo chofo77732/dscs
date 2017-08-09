@@ -5,9 +5,9 @@
  */
 package controles;
 
+import entidades.Customers;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,11 +19,10 @@ import modelo.CustomersFacadeLocal;
  *
  * @author MiguelAngel
  */
-public class prueba extends HttpServlet {
+public class deleteCustom extends HttpServlet {
     @EJB
     private CustomersFacadeLocal customersFacade;
 
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,27 +34,32 @@ public class prueba extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String a = request.getParameter("1");
+        String b = request.getParameter("2");
+        String c = request.getParameter("3");
+        String d = request.getParameter("4");
+        String e = request.getParameter("5");
+        String f = request.getParameter("6");
+        String g = request.getParameter("7");
+        String h = request.getParameter("8");
+        
+        if(a!=null && !a.equals("")){
+            int ai=Integer.parseInt(a);
+            entidades.Customers ec=new Customers(ai,b,c,d,e,f,g,h);
+                customersFacade.remove(ec); 
+            }
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet prueba</title>");            
+            out.println("<title>Servlet deleteCustom</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet prueba at " + request.getContextPath() + "</h1>");
-            
-                        
-            List<entidades.Customers> c1= customersFacade.findAll();
-            for (int i = 0; i < c1.size(); i++) {
-               
-                out.println("<h2>");
-                out.println(c1.get(i).getCity());
-                out.println("</h2>");
-
-            }
-            
+            out.println("<a href=\"customers\">Se elimino</a>");
             out.println("</body>");
             out.println("</html>");
         }
