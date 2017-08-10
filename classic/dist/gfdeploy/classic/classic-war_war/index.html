@@ -9,28 +9,47 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="css/bootstrap.css">
+          <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div>Classic Models</div>
         
-    <table>
-      <tr>
-  <th>Tabla</th>      
-      </tr>
-<tr>
-  <tr><td><a href="customers">Customers</a></td><td><a href="addCustom.jsp">Agregar</a></td></tr>
-  <tr><td><a href="">Employees</a></td><td><a href="addCustom.jsp">Agregar</a></td></tr>
-  <tr><td><a href="">Employees_audit</a></td></tr>
-  <tr><td><a href="">Offices</a></td></tr>
-  <tr><td><a href="">OrderDetails</a></td></tr>
-  <tr><td><a href="">Orders</a></td></tr>
-  <tr><td><a href="">Payments</a></td></tr>
-  <tr><td><a href="">Productlines</a></td></tr>
-  <tr><td><a href="">Productos</a></td></tr>
+        
+<div class="container">
 
-    </table>
-        
-        
-        
+    <div class="row">
+    
+        <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Tablas</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="customers" target="iframe_a">Customers</a></li>
+      <li><a href="productsLine" target="iframe_a">Employees</a></li>
+      <li><a href="city.php" target="iframe_a">Employees_audit</a></li>
+      <li><a href="country.php" target="iframe_a">Offices</a></li>
+     <!-- <li><a href="custom.php" target="iframe_a">OrderDetails</a></li> -->
+      <li><a href="orders" target="iframe_a">Orders</a></li>
+     <!-- <li><a href="film_category.php" target="iframe_a">Payments</a></li> -->
+      <li><a href="pl" target="iframe_a">ProductLine</a></li>
+      <li><a href="product" target="iframe_a">Products</a></li>
+      
+    </ul>
+  </div>
+</nav>
+
+        <iframe src="customers" height="500" width="1200" name="iframe_a" frameborder="0">
+    
+
+</iframe>
+
+
+      </div>    
+      </div>    
     </body>
 </html>

@@ -76,17 +76,25 @@ public class customers extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet customers</title>");            
+            out.println("          <link rel=\"stylesheet\" href=\"css/bootstrap.css\">\n" +
+"          <link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">\n" +
+"  <script src=\"js/jquery.js\"></script>\n" +
+"  <script src=\"js/angular.min.js\"></script>\n" +
+"  <script src=\"js/bootstrap.js\"></script>\n" +
+"  <script src=\"js/bootstrap.min.js\"></script>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet customers at " + request.getContextPath() + "</h1>");
+            out.println("<div class=\"col-sx-66\">");
+            
+            
+            out.println("<h1>Customers</h1>");
 //            entidades.Customers ec=new Customers(99, "hola", "adios", "1", "3", "2", "4", "4");
 //            customersFacade.create(ec);
 
 //            out.println(eli);
-            out.println(hola);
-
-            out.println("<a href=\"index.html\">Volver</a>");
-            out.println("<table>");
+            out.println("<a href=\"addCustom.jsp\">Agregar</a>");
+            
+            out.println("<table class=\"table table-bordered table-responsive\">");
             out.println("<tr>");
             out.println("<th>customerNumber</th>");
             out.println("<th>customerName</th>");
@@ -172,6 +180,8 @@ public class customers extends HttpServlet {
             
             out.println("</table>");
             
+            out.println("</div>");
+
             out.println("</body>");
             out.println("</html>");
         } 

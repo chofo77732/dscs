@@ -10,6 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+                  <link rel="stylesheet" href="css/bootstrap.css">
+          <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
         
@@ -30,7 +36,7 @@
  
 
               
-    <table style="border: 1px solid black">
+    <table style="border: 1px solid black" class="table table-bordered table-responsive">
       
       <tr>
         <td>customerNumber</td>
@@ -88,6 +94,6 @@
 
 
         
-        <a href="index.html">volver</a>
+        <a href="customers">volver</a>
     </body>
 </html>
