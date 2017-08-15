@@ -36,7 +36,11 @@ public class employess extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+<<<<<<< HEAD
         String a = request.getParameter("1");
+=======
+                                String a = request.getParameter("1");
+>>>>>>> 8d3a8eb91c16b44acd44717256c7d690bdbd40dd
         String b = request.getParameter("2");
         String c = request.getParameter("3");
         String d = request.getParameter("4");
@@ -56,6 +60,7 @@ public class employess extends HttpServlet {
             if(opc.equals("editar")){
 //                customersFacade.remove(ec); 
                 employeesFacade.edit(p1);
+<<<<<<< HEAD
                                 response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
         out.println("<script> window.location=\"index.html\"; </script>");
@@ -66,6 +71,10 @@ public class employess extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
         out.println("<script> window.location=\"index.html\"; </script>");
         }
+=======
+            }else{
+               employeesFacade.create(p1);
+>>>>>>> 8d3a8eb91c16b44acd44717256c7d690bdbd40dd
             }
 
         }
@@ -102,8 +111,12 @@ public class employess extends HttpServlet {
             out.println("<th>reportsTo</th>");
             out.println("<th>jobTittle</th>");
        
+<<<<<<< HEAD
             out.println("<th>Editar</th>");
             out.println("<th>Eliminar</th>");
+=======
+            out.println("<th>Opciones</th>");
+>>>>>>> 8d3a8eb91c16b44acd44717256c7d690bdbd40dd
             out.println("</tr>");
             
             
@@ -150,6 +163,7 @@ public class employess extends HttpServlet {
 "<input type=\"hidden\" name=\"g\" value=\""+c1.get(i).getReportsTo()+"\" />\n" +
 "<input type=\"hidden\" name=\"h\" value=\""+c1.get(i).getJobTitle()+"\" />\n" +
 "<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
+<<<<<<< HEAD
 "<button class=\"btn btn-primary\" type=\"submit\" value=\"Editar\" /></button>\n" +
 "</form>");    
 
@@ -170,6 +184,9 @@ public class employess extends HttpServlet {
 "<input type=\"hidden\" name=\"h\" value=\""+c1.get(i).getJobTitle()+"\" />\n" +
 "<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
 "<button class=\"btn btn-danger\" type=\"submit\" value=\"Eliminar\" /></button>\n" +
+=======
+"<input type=\"submit\" value=\"Editar/eliminar\" />\n" +
+>>>>>>> 8d3a8eb91c16b44acd44717256c7d690bdbd40dd
 "</form>");    
 
 
