@@ -35,7 +35,6 @@ public class deleteEmploy extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-<<<<<<< HEAD
         String a = request.getParameter("a");
         String b = request.getParameter("b");
         String c = request.getParameter("c");
@@ -44,16 +43,6 @@ public class deleteEmploy extends HttpServlet {
         String f = request.getParameter("f");
         String g = request.getParameter("g");
         String h = request.getParameter("h");
-=======
-                                        String a = request.getParameter("1");
-        String b = request.getParameter("2");
-        String c = request.getParameter("3");
-        String d = request.getParameter("4");
-        String e = request.getParameter("5");
-        String f = request.getParameter("6");
-        String g = request.getParameter("7");
-        String h = request.getParameter("8");
->>>>>>> 8d3a8eb91c16b44acd44717256c7d690bdbd40dd
         String opc = request.getParameter("opcion");
         
 
@@ -75,11 +64,7 @@ public class deleteEmploy extends HttpServlet {
             out.println("<title>Servlet deleteEmploy</title>");            
             out.println("</head>");
             out.println("<body>");
-<<<<<<< HEAD
             out.println("<script> window.location=\"index.html\"; </script>");
-=======
-            out.println("<a href=\"employess\">Se elimino</a>");
->>>>>>> 8d3a8eb91c16b44acd44717256c7d690bdbd40dd
             out.println("</body>");
             out.println("</html>");
         }

@@ -78,28 +78,7 @@
 <input type="submit" value="Guardar"/>
 
     </form>
-<<<<<<< HEAD
  
         <a href="index.html">volver</a>
-=======
-
-          <form name="f" action="deleteEmploy" method="post">
-            <input type="hidden" name="1" value=<%= a %>>
-            <input type="hidden" name="2" value=<%= b %>>
-            <input type="hidden" name="3" value=<%= c %>>
-            <input type="hidden" name="4" value=<%= d %>>
-            <input type="hidden" name="5" value=<%= e %>>
-            <input type="hidden" name="6" value=<%= f %>>
-            <input type="hidden" name="7" value=<%= g %>>
-            <input type="hidden" name="8" value=<%= h %>>
-<input type="hidden" name="opcion" value=<%= edi %> />
-<input type="submit" value="Eliminar"/>
-
-    </form>
-
-
-        
-        <a href="employess">volver</a>
->>>>>>> 8d3a8eb91c16b44acd44717256c7d690bdbd40dd
     </body>
 </html>
