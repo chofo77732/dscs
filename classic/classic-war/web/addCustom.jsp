@@ -78,22 +78,7 @@
 
     </form>
 
-          <form name="f" action="deleteCustom" method="post">
-            <input type="hidden" name="1" value=<%= a %>>
-            <input type="hidden" name="2" value=<%= b %>>
-            <input type="hidden" name="3" value=<%= c %>>
-            <input type="hidden" name="4" value=<%= d %>>
-            <input type="hidden" name="5" value=<%= e %>>
-            <input type="hidden" name="6" value=<%= f %>>
-            <input type="hidden" name="7" value=<%= g %>>
-            <input type="hidden" name="8" value=<%= h %>>
-<input type="hidden" name="opcion" value=<%= i %> />
-<input type="submit" value="Eliminar"/>
-
-    </form>
-
-
-        
-        <a href="customers">volver</a>
+  
+        <a href="index.html">volver</a>
     </body>
 </html>

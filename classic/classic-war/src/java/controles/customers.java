@@ -57,8 +57,16 @@ public class customers extends HttpServlet {
             if(opc.equals("editar")){
 //                customersFacade.remove(ec); 
                 customersFacade.edit(ec); 
+                response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }else{
                 customersFacade.create(ec); 
+                response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }
 
         }
@@ -109,7 +117,8 @@ public class customers extends HttpServlet {
             out.println("<th>country</th>");
             out.println("<th>salesRepEmployeeNumber</th>");
             out.println("<th>CreditLimit</th>");
-            out.println("<th>Opciones</th>");
+            out.println("<th>Editar</th>");
+            out.println("<th>Eliminar</th>");
             out.println("</tr>");
             
             
@@ -157,6 +166,7 @@ public class customers extends HttpServlet {
                 out.println("<td>");    
                 out.println(c1.get(i).getCreditLimit());
                 out.println("</td>");
+                
                 out.println("<td>");  
                 
                 out.println("<form action=\"addCustom.jsp\">\n" +
@@ -169,10 +179,21 @@ public class customers extends HttpServlet {
 "<input type=\"hidden\" name=\"g\" value=\""+c1.get(i).getCity()+"\" />\n" +
 "<input type=\"hidden\" name=\"h\" value=\""+c1.get(i).getCountry()+"\" />\n" +
 "<input type=\"hidden\" name=\"i\" value=\"editar\" />\n" +
-"<input type=\"submit\" value=\"Editar/eliminar\" />\n" +
+"<button class=\"btn btn-primary\" type=\"submit\" value=\"Editar\" /></button>\n" +
 "</form>");    
-
-
+out.println("</td>");out.println("<td>");
+                out.println("<form action=\"deleteCustom\">\n" +
+"<input type=\"hidden\" name=\"a\" value=\""+c1.get(i).getCustomerNumber()+"\" />\n" +
+"<input type=\"hidden\" name=\"b\" value=\""+c1.get(i).getCustomerName()+"\" />\n" +
+"<input type=\"hidden\" name=\"c\" value=\""+c1.get(i).getContactLastName()+"\" />\n" +
+"<input type=\"hidden\" name=\"d\" value=\""+c1.get(i).getContactFirstName()+"\" />\n" +
+"<input type=\"hidden\" name=\"e\" value=\""+c1.get(i).getPhone()+"\" />\n" +
+"<input type=\"hidden\" name=\"f\" value=\""+c1.get(i).getAddressLine1()+"\" />\n" +
+"<input type=\"hidden\" name=\"g\" value=\""+c1.get(i).getCity()+"\" />\n" +
+"<input type=\"hidden\" name=\"h\" value=\""+c1.get(i).getCountry()+"\" />\n" +
+"<input type=\"hidden\" name=\"i\" value=\"editar\" />\n" +
+"<button class=\"btn btn-danger\" type=\"submit\" value=\"Eliminar\" /></button>\n" +
+"</form>"); 
                 out.println("</td>");
                 out.println("</tr>");
 

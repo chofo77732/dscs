@@ -55,18 +55,8 @@
 <input type="hidden" name="opcion" value=<%= edi %> />
 <input type="submit" value="Guardar"/>
 
-    </form>
-
-          <form name="f" action="deletepl" method="post">
-            <input type="hidden" name="1" value=<%= a %>>
-
-<input type="hidden" name="opcion" value=<%= edi %> />
-<input type="submit" value="Eliminar"/>
-
-    </form>
 
 
-        
-        <a href="pl">volver</a>
+        <a href="index.html">volver</a>
     </body>
 </html>

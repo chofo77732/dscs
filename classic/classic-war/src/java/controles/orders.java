@@ -60,8 +60,16 @@ Date date = new Date();
             if(opc.equals("editar")){
 //                customersFacade.remove(ec); 
                 ordersFacade.edit(p1);
+                                response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }else{
                ordersFacade.create(p1);
+                               response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }
 
         }
@@ -99,7 +107,8 @@ Date date = new Date();
             out.println("<th>commnets</th>");
             out.println("<th>customerNumer</th>");
        
-            out.println("<th>Opciones</th>");
+            out.println("<th>Editar</th>");
+            out.println("<th>Eliminar</th>");
             out.println("</tr>");
             
             
@@ -130,9 +139,7 @@ Date date = new Date();
                 out.println(c1.get(i).getCustomerNumber());
                 out.println("</td>");
    
-                out.println("<td>");    
-
-                
+                out.println("<td>");
                 out.println("<form action=\"addOrder.jsp\">\n" +
 "<input type=\"hidden\" name=\"a\" value=\""+c1.get(i).getOrderNumber()+"\" />\n" +
 "<input type=\"hidden\" name=\"b\" value=\""+c1.get(i).getOrderDate()+"\" />\n" +
@@ -142,11 +149,24 @@ Date date = new Date();
 "<input type=\"hidden\" name=\"f\" value=\""+c1.get(i).getComments()+"\" />\n" +
 "<input type=\"hidden\" name=\"g\" value=\""+c1.get(i).getCustomerNumber()+"\" />\n" +
 "<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
-"<input type=\"submit\" value=\"Editar/eliminar\" />\n" +
-"</form>");    
-
-
+"<button class=\"btn btn-primary\" type=\"submit\" value=\"Editar\" /></button>\n" +
+"</form>");
                 out.println("</td>");
+                
+                                out.println("<td>");
+                out.println("<form action=\"deleteOrder\">\n" +
+"<input type=\"hidden\" name=\"a\" value=\""+c1.get(i).getOrderNumber()+"\" />\n" +
+"<input type=\"hidden\" name=\"b\" value=\""+c1.get(i).getOrderDate()+"\" />\n" +
+"<input type=\"hidden\" name=\"c\" value=\""+c1.get(i).getRequiredDate()+"\" />\n" +
+"<input type=\"hidden\" name=\"d\" value=\""+c1.get(i).getShippedDate()+"\" />\n" +
+"<input type=\"hidden\" name=\"e\" value=\""+c1.get(i).getStatus()+"\" />\n" +
+"<input type=\"hidden\" name=\"f\" value=\""+c1.get(i).getComments()+"\" />\n" +
+"<input type=\"hidden\" name=\"g\" value=\""+c1.get(i).getCustomerNumber()+"\" />\n" +
+"<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
+"<button class=\"btn btn-danger\" type=\"submit\" value=\"Eliminar\" /></button>\n" +
+"</form>");
+                out.println("</td>");
+                
                 out.println("</tr>");
 
             }

@@ -35,13 +35,13 @@ public class deleteOrder extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                                String a = request.getParameter("1");
-        String b = request.getParameter("2");
-        String c = request.getParameter("3");
-        String d = request.getParameter("4");
-        String e = request.getParameter("5");
-        String f = request.getParameter("6");
-        String g = request.getParameter("7");
+        String a = request.getParameter("a");
+        String b = request.getParameter("b");
+        String c = request.getParameter("c");
+        String d = request.getParameter("d");
+        String e = request.getParameter("e");
+        String f = request.getParameter("f");
+        String g = request.getParameter("g");
         String opc = request.getParameter("opcion");
         String eli = request.getParameter("eliminar");
         String hola="no";
@@ -68,7 +68,8 @@ Date date = new Date();
             out.println("<title>Servlet deleteOrder</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<a href=\"orders\">Se elimino</a>");
+                    out.println("<script> window.location=\"index.html\"; </script>");
+
             out.println("</body>");
             out.println("</html>");
         }

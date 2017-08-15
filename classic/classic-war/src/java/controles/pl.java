@@ -52,8 +52,16 @@ public class pl extends HttpServlet {
             if(opc.equals("editar")){
 //                customersFacade.remove(ec); 
                 productlinesFacade.edit(p1);
+                response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }else{
                productlinesFacade.create(p1);
+               response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }
 
         }
@@ -89,7 +97,8 @@ public class pl extends HttpServlet {
             out.println("<th>textDescription</th>");
             out.println("<th>HTMLDescription</th>");
             out.println("<th>Image</th>");
-            out.println("<th>Opciones</th>");
+            out.println("<th>Editar</th>");
+            out.println("<th>Eliminar</th>");
             out.println("</tr>");
             
             
@@ -110,17 +119,23 @@ public class pl extends HttpServlet {
                 out.println("<td>");    
                 out.println(c1.get(i).getImage());
                 out.println("</td>");
-                out.println("<td>");    
-
                 
+                out.println("<td>");
                 out.println("<form action=\"addpl.jsp\">\n" +
 "<input type=\"hidden\" name=\"a\" value=\""+c1.get(i).getProductLine()+"\" />\n" +
 "<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
-"<input type=\"submit\" value=\"Editar/eliminar\" />\n" +
-"</form>");    
-
-
+"<button class=\"btn btn-primary\" type=\"submit\" value=\"Editar\" /></button>\n" +
+"</form>");
                 out.println("</td>");
+                
+                out.println("<td>");
+                out.println("<form action=\"deletepl\">\n" +
+"<input type=\"hidden\" name=\"a\" value=\""+c1.get(i).getProductLine()+"\" />\n" +
+"<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
+"<button class=\"btn btn-danger\" type=\"submit\" value=\"Eliminar\" /></button>\n" +
+"</form>");
+                out.println("</td>");
+                
                 out.println("</tr>");
 
             }

@@ -83,23 +83,7 @@
 
     </form>
 
-          <form name="f" action="deleteProduct" method="post">
-            <input type="hidden" name="1" value=<%= a %>>
-            <input type="hidden" name="2" value=<%= b %>>
-            <input type="hidden" name="3" value=<%= c %>>
-            <input type="hidden" name="4" value=<%= d %>>
-            <input type="hidden" name="5" value=<%= e %>>
-            <input type="hidden" name="6" value=<%= f %>>
-            <input type="hidden" name="7" value=<%= g %>>
-            <input type="hidden" name="8" value=<%= h %>>
-            <input type="hidden" name="9" value=<%= j %>>
-<input type="hidden" name="opcion" value=<%= edi %> />
-<input type="submit" value="Eliminar"/>
 
-    </form>
-
-
-        
-        <a href="product">volver</a>
+        <a href="index.html">volver</a>
     </body>
 </html>

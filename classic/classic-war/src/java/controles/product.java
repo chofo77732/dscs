@@ -62,8 +62,16 @@ public class product extends HttpServlet {
             if(opc.equals("editar")){
 //                customersFacade.remove(ec); 
                 productsFacade.edit(p1);
+                response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }else{
                productsFacade.create(p1);
+               response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        out.println("<script> window.location=\"index.html\"; </script>");
+        }
             }
 
         }
@@ -106,7 +114,8 @@ public class product extends HttpServlet {
             out.println("<th>quantityInStock</th>");
             out.println("<th>buyPrice</th>");
             out.println("<th>MSRP</th>");
-            out.println("<th>Opciones</th>");
+            out.println("<th>Editar</th>");
+            out.println("<th>Eliminar</th>");
             out.println("</tr>");
             
             
@@ -141,10 +150,9 @@ public class product extends HttpServlet {
                 out.println("</td>");     
                 out.println("<td>");    
                 out.println(c1.get(i).getMsrp());
-                out.println("</td>");   
-                out.println("<td>");    
-
+                out.println("</td>");  
                 
+                out.println("<td>");
                 out.println("<form action=\"addProduct.jsp\">\n" +
 "<input type=\"hidden\" name=\"a\" value=\""+c1.get(i).getProductCode()+"\" />\n" +
 "<input type=\"hidden\" name=\"b\" value=\""+c1.get(i).getProductName()+"\" />\n" +
@@ -156,11 +164,28 @@ public class product extends HttpServlet {
 "<input type=\"hidden\" name=\"h\" value=\""+c1.get(i).getBuyPrice()+"\" />\n" +
 "<input type=\"hidden\" name=\"j\" value=\""+c1.get(i).getMsrp()+"\" />\n" +
 "<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
-"<input type=\"submit\" value=\"Editar/eliminar\" />\n" +
-"</form>");    
-
-
+"<button class=\"btn btn-primary\" type=\"submit\" value=\"Editar\" /></button>\n" +
+"</form>");
                 out.println("</td>");
+                
+                
+                out.println("<td>");
+                out.println("<form action=\"deleteProduct\">\n" +
+"<input type=\"hidden\" name=\"a\" value=\""+c1.get(i).getProductCode()+"\" />\n" +
+"<input type=\"hidden\" name=\"b\" value=\""+c1.get(i).getProductName()+"\" />\n" +
+"<input type=\"hidden\" name=\"c\" value=\""+c1.get(i).getProductLine()+"\" />\n" +
+"<input type=\"hidden\" name=\"d\" value=\""+c1.get(i).getProductScale()+"\" />\n" +
+"<input type=\"hidden\" name=\"e\" value=\""+c1.get(i).getProductVendor()+"\" />\n" +
+"<input type=\"hidden\" name=\"f\" value=\""+c1.get(i).getProductDescription()+"\" />\n" +
+"<input type=\"hidden\" name=\"g\" value=\""+c1.get(i).getQuantityInStock()+"\" />\n" +
+"<input type=\"hidden\" name=\"h\" value=\""+c1.get(i).getBuyPrice()+"\" />\n" +
+"<input type=\"hidden\" name=\"j\" value=\""+c1.get(i).getMsrp()+"\" />\n" +
+"<input type=\"hidden\" name=\"edi\" value=\"editar\" />\n" +
+"<button class=\"btn btn-danger\" type=\"submit\" value=\"Eliminar\" /></button>\n" +
+"</form>");
+                out.println("</td>");                
+                
+                
                 out.println("</tr>");
 
             }

@@ -15,6 +15,19 @@ and open the template in the editor.
   <script src="js/angular.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  
+<script>
+$(document).ready(function(){
+  cargar("customers");
+
+});
+  function cargar(id){
+    //swicht con opc
+    
+    $("#div1").load(id);
+  }
+
+</script>
     </head>
     <body>
         
@@ -29,24 +42,28 @@ and open the template in the editor.
       <a class="navbar-brand" href="#">Tablas</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="customers" target="iframe_a">Customers</a></li>
-      <li><a href="productsLine" target="iframe_a">Employees</a></li>
-      <li><a href="city.php" target="iframe_a">Employees_audit</a></li>
-      <li><a href="country.php" target="iframe_a">Offices</a></li>
+      <li><a  onclick="cargar('customers')" >Customers</a></li>
+      <li><a onclick="cargar('employess')" >Employees</a></li>
      <!-- <li><a href="custom.php" target="iframe_a">OrderDetails</a></li> -->
-      <li><a href="orders" target="iframe_a">Orders</a></li>
+      <li><a onclick="cargar('orders')" >Orders</a></li>
      <!-- <li><a href="film_category.php" target="iframe_a">Payments</a></li> -->
-      <li><a href="pl" target="iframe_a">ProductLine</a></li>
-      <li><a href="product" target="iframe_a">Products</a></li>
+      <li><a onclick="cargar('pl')">ProductLine</a></li>
+      <li><a onclick="cargar('product')" >Products</a></li>
       
     </ul>
   </div>
 </nav>
+        
+        
+        
+<div class="container"><div class="row"><div class="col-xs-12">
+        <div id="div1"  ></div>
+</div></div></div>
 
-        <iframe src="customers" height="500" width="1200" name="iframe_a" frameborder="0">
-    
 
-</iframe>
+    <!--    <button>Get External Content</button>
+    <iframe src="customers" height="500" width="1200" name="iframe_a" frameborder="0">
+    </iframe> -->
 
 
       </div>    

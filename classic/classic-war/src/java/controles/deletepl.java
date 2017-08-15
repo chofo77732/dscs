@@ -34,7 +34,7 @@ public class deletepl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                                String a = request.getParameter("1");
+                                String a = request.getParameter("a");
 
         String opc = request.getParameter("opcion");
         String eli = request.getParameter("eliminar");
@@ -59,7 +59,7 @@ public class deletepl extends HttpServlet {
             out.println("<title>Servlet deletepl</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<a href=\"pl\">Se elimino</a>");
+            out.println("<script> window.location=\"index.html\"; </script>");
             out.println("</body>");
             out.println("</html>");
         }
